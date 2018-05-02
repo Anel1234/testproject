@@ -2,7 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "description": "test project",
-  "main": "test.js",
+  "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Anel1234/testproject/issues"
   },
-  "homepage": "https://github.com/Anel1234/testproject#readme"
+  "homepage": "https://github.com/Anel1234/testproject#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
