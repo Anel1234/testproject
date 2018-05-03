@@ -1,25 +1,24 @@
-const express = require('express');
-
-const app = express();
+var express = require('express');
+var app = express();
 
 app.get('/', function (req, res) {
 
-  const sql = require("mssql");
+  var sql = require('mssql');
 
-  const config = {
-    user: 'GIDEV\apil',
-    password: '',
-    server: '(localdb)\v11.0',
-    database: 'testbase'
+  var config = {
+    user: 'testuser',
+    password: 'Nottingham14',
+    server: 'transsqldev',
+    database: 'GI_CRS_UTMS_APIL',
   };
 
-  sql.ConnectionError(config, function(err) {
+  sql.connect(config, function(err) {
 
     if (err) console.log(err);
 
     var request = new sql.Request();
 
-    request.query('select * from users', function(err, recordset) {
+    request.query('select * from workflows', function(err, recordset) {
  
       if (err) console.log(err);
 
@@ -30,6 +29,6 @@ app.get('/', function (req, res) {
 
 });
 
-const server = app.listen(8000, () => {
+var server = app.listen(8000, () => {
   console.log('Server started!');
 });
